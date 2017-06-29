@@ -1,5 +1,11 @@
-const { convertToValue, convertDigitsFromLines, convertNumberFromLines, convertNumbersFromString, readNumbersFromFile } = require('./account-number')
 const { digits } = require('./digits')
+const {
+  convertToValue,
+  convertDigitsFromLines,
+  convertNumberFromLines,
+  convertNumbersFromString,
+  readNumbersFromFile,
+} = require('./account-number')
 
 it('converts string numeric representation to numeric', () => {
   let value_one = convertToValue(digits.one)

@@ -37,4 +37,10 @@ const readNumbersFromFile = path => new Promise((resolve, reject) =>
   })
 )
 
-module.exports = { convertToValue, convertDigitsFromLines, convertNumberFromLines, convertNumbersFromString, readNumbersFromFile }
+module.exports = {
+  convertToValue,
+  convertDigitsFromLines,
+  convertNumberFromLines,
+  convertNumbersFromString,
+  readNumbersFromFile,
+}
