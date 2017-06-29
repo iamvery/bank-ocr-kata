@@ -45,3 +45,14 @@ it('converts multiple numbers from string to numeric', () => {
 
   expect(values).toEqual([[2,1,2], [1,1,2]])
 })
+
+const fs = require('fs')
+
+it('readers numbers from file', done => {
+  fs.readFile('./account-numbers.txt', 'utf8', (err, data) => {
+    let values = convertNumbersFromString(data)
+
+    expect(values).toEqual([[1,2,3,4,5,6,7,8,9], [0,1,2,3,4,5,6,7,8]])
+    done()
+  })
+})
