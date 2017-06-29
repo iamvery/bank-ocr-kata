@@ -1,4 +1,4 @@
-const { numbers, convertToValue } = require('./account-number')
+const { numbers, convertToValue, convertDigitsFromString } = require('./account-number')
 
 it('converts string numeric representation to numeric', () => {
   let value_one = convertToValue(numbers.one)
@@ -6,4 +6,14 @@ it('converts string numeric representation to numeric', () => {
 
   expect(value_one).toEqual(1)
   expect(value_two).toEqual(2)
+})
+
+it('reads account number string line by line into set of digits', () => {
+  let account_number = ' _    \n' +
+                       ' _|  |\n' +
+                       '|_   |'
+
+  let digits = convertDigitsFromString(account_number)
+
+  expect(digits).toEqual([numbers.two, numbers.one])
 })
