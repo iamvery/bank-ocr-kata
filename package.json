@@ -1,0 +1,8 @@
+{
+  "name": "bank-ocr-kata",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:iamvery/bank-ocr-kata.git",
+  "author": "Jay Hayes <ur@iamvery.com>",
+  "license": "MIT"
+}
