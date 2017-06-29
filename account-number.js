@@ -27,8 +27,8 @@ const collectDigitsParts = (digits, line) => {
   })
   return digits
 }
-const convertDigitsFromString = string => string.split('\n').reduce(collectDigitsParts, [])
+const convertDigitsFromLines = lines => lines.reduce(collectDigitsParts, [])
 
-const convertNumberFromString = string => convertDigitsFromString(string).map(convertToValue)
+const convertNumberFromLines = lines => convertDigitsFromLines(lines).map(convertToValue)
 
-module.exports = { numbers, convertToValue, convertDigitsFromString, convertNumberFromString }
+module.exports = { numbers, convertToValue, convertDigitsFromLines, convertNumberFromLines }
