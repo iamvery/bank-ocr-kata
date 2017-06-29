@@ -19,11 +19,11 @@ it('reads account number string line by line into set of digits', () => {
 })
 
 it('converts account number string representation to numeric', () => {
-  let account_number = ' _    \n' +
-                       ' _|  |\n' +
-                       '|_   |'
+  let account_number = ' _     _ \n' +
+                       ' _|  | _|\n' +
+                       '|_   ||_ '
 
   let value = convertNumberFromString(account_number)
 
-  expect(value).toEqual([2, 1])
+  expect(value).toEqual([2, 1, 2])
 })
