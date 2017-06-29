@@ -5,6 +5,10 @@
   "repository": "git@github.com:iamvery/bank-ocr-kata.git",
   "author": "Jay Hayes <ur@iamvery.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch"
+  },
   "devDependencies": {
     "jest": "^20.0.4"
   }
