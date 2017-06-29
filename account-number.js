@@ -31,4 +31,12 @@ const convertDigitsFromLines = lines => lines.reduce(collectDigitsParts, [])
 
 const convertNumberFromLines = lines => convertDigitsFromLines(lines).map(convertToValue)
 
-module.exports = { numbers, convertToValue, convertDigitsFromLines, convertNumberFromLines }
+const rows_per_digit = 4
+const convertNumbersFromString = string => {
+  let lines = string.split('\n')
+  let chunks = _.chunk(lines, rows_per_digit).map(chunk => chunk.slice(0,3)) // throw away 4th, empty line
+  let digits = chunks.map(convertNumberFromLines)
+  return digits
+}
+
+module.exports = { numbers, convertToValue, convertDigitsFromLines, convertNumberFromLines, convertNumbersFromString }
