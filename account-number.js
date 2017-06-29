@@ -1,4 +1,5 @@
 const _ = require('lodash')
+const fs = require('fs')
 
 const zero = ' _ ' +
              '| |' +
@@ -71,4 +72,13 @@ const convertNumbersFromString = string => {
   return digits
 }
 
-module.exports = { numbers, convertToValue, convertDigitsFromLines, convertNumberFromLines, convertNumbersFromString }
+const readNumbersFromFile = path => new Promise((resolve, reject) =>
+  fs.readFile(path, 'utf8', (err, data) => {
+    if (err) {
+      reject(error)
+    }
+    resolve(convertNumbersFromString(data))
+  })
+)
+
+module.exports = { numbers, convertToValue, convertDigitsFromLines, convertNumberFromLines, convertNumbersFromString, readNumbersFromFile }

@@ -1,4 +1,4 @@
-const { numbers, convertToValue, convertDigitsFromLines, convertNumberFromLines, convertNumbersFromString } = require('./account-number')
+const { numbers, convertToValue, convertDigitsFromLines, convertNumberFromLines, convertNumbersFromString, readNumbersFromFile } = require('./account-number')
 
 it('converts string numeric representation to numeric', () => {
   let value_one = convertToValue(numbers.one)
@@ -46,13 +46,10 @@ it('converts multiple numbers from string to numeric', () => {
   expect(values).toEqual([[2,1,2], [1,1,2]])
 })
 
-const fs = require('fs')
-
 it('readers numbers from file', done => {
-  fs.readFile('./account-numbers.txt', 'utf8', (err, data) => {
-    let values = convertNumbersFromString(data)
-
-    expect(values).toEqual([[1,2,3,4,5,6,7,8,9], [0,1,2,3,4,5,6,7,8]])
-    done()
-  })
+  readNumbersFromFile('./account-numbers.txt')
+    .then(numbers => {
+      expect(numbers).toEqual([[1,2,3,4,5,6,7,8,9], [0,1,2,3,4,5,6,7,8]])
+      done()
+    })
 })
